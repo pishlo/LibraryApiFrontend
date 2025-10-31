@@ -1,0 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  min-height: 100%;
+  background: linear-gradient(135deg, #646cff, #1a1a1a);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* optional, keeps gradient stationary */
+  font-family: sans-serif;
+  color: #fff;
+}

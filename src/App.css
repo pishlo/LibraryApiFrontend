@@ -1,0 +1,372 @@
+/* .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+} */
+
+.navbar {
+  position: fixed;      /* Fix it at the top */
+  top: 0;               /* Align with top of viewport */
+  left: 0;              /* Stretch to left */
+  width: 100%;          /* Full width */
+  z-index: 1000;        /* Ensure it stays above other content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links a {
+  margin-right: 3rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  color: #646cff;
+}
+
+/* Buttons (global) */
+.home-buttons {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  margin: 0.2em 0.5em;;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: #ccc;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.home-buttons:hover {
+  border-color: #646cff;
+  color: #646cff;
+}
+
+/* Home page */
+.home {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #fff;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.home h1 { font-size: 3rem; margin-bottom: 1rem; }
+.home p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; }
+.home .home-buttons button { margin: 0 0.5rem; padding: 0.8rem 1.5rem; }
+
+
+/* === Generic Page Layout === */
+.page {
+  padding: 2rem;
+}
+
+.page-header {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center the content */
+  gap: 1rem; /* space between title and button */
+  position: relative; /* needed for absolute positioning of expanding text */
+}
+
+.page h2 {
+  padding: 10px;
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  color: #1a1a1a;
+}
+
+/* === Cards Grid === */
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* === Card === */
+.card {
+  background-color: #1a1a1a;
+  color: #fff;
+  width: 220px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* === Card Text === */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtext {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.3rem;
+}
+
+/* === Card Actions === */
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+/* === Action Buttons === */
+.green-btn {
+  color: #4ade80;
+  border: 1px solid #4ade80;
+  background: transparent;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.green-btn:hover {
+  background-color: #4ade80;
+  color: #1a1a1a;
+}
+
+.red-btn {
+  color: #f87171;
+  border: 1px solid #f87171;
+  background: transparent;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.red-btn:hover {
+  background-color: #f87171;
+  color: #1a1a1a;
+}
+
+/* === Editable Card === */
+.creating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.creating input {
+  width: 80%;
+  margin: 6px 0;
+  padding: 6px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  text-align: center;
+  font-size: 0.95em;
+  color: white;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+
+/* === Create Button === */
+/* From Uiverse.io by vinodjangid07 */ 
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  background-color: #1a1a1a;
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  font-size: 2em;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease;
+}
+
+/* text */
+.text {
+  position: absolute;
+  left: 45px; /* start right after the initial button width */
+  width: 0;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* hover effect on button width */
+.Btn:hover {
+  width: 110px; /* expands to the right */
+}
+
+.Btn:hover .sign {
+  width: 50%;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  width: calc(100% - 45px); /* take remaining space */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+/* Spinner */
+/* From Uiverse.io by dovatgabriel */ 
+.three-body {
+  --uib-size: 70px;
+  --uib-speed: 0.8s;
+  --uib-color: #000000;
+  position: relative;
+  display: inline-block;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
+}
+ 
+.three-body__dot {
+  position: absolute;
+  height: 100%;
+  width: 30%;
+}
+ 
+.three-body__dot:after {
+  content: '';
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  padding-bottom: 100%;
+  background-color: var(--uib-color);
+  border-radius: 50%;
+}
+ 
+.three-body__dot:nth-child(1) {
+  bottom: 5%;
+  left: 0;
+  transform: rotate(60deg);
+  transform-origin: 50% 85%;
+}
+ 
+.three-body__dot:nth-child(1)::after {
+  bottom: 0;
+  left: 0;
+  animation: wobble1 var(--uib-speed) infinite ease-in-out;
+  animation-delay: calc(var(--uib-speed) * -0.3);
+}
+ 
+ .three-body__dot:nth-child(2) {
+  bottom: 5%;
+  right: 0;
+  transform: rotate(-60deg);
+  transform-origin: 50% 85%;
+}
+ 
+ .three-body__dot:nth-child(2)::after {
+  bottom: 0;
+  left: 0;
+  animation: wobble1 var(--uib-speed) infinite
+     calc(var(--uib-speed) * -0.15) ease-in-out;
+}
+ 
+.three-body__dot:nth-child(3) {
+  bottom: -5%;
+  left: 0;
+  transform: translateX(116.666%);
+}
+ 
+.three-body__dot:nth-child(3)::after {
+  top: 0;
+  left: 0;
+  animation: wobble2 var(--uib-speed) infinite ease-in-out;
+}
+ 
+@keyframes spin78236 {
+  0% {
+   transform: rotate(0deg);
+  }
+ 
+  100% {
+   transform: rotate(360deg);
+  }
+}
+ 
+@keyframes wobble1 {
+  0%,
+   100% {
+   transform: translateY(0%) scale(1);
+   opacity: 1;
+  }
+ 
+  50% {
+   transform: translateY(-66%) scale(0.65);
+   opacity: 0.8;
+  }
+}
+ 
+@keyframes wobble2 {
+  0%,
+   100% {
+   transform: translateY(0%) scale(1);
+   opacity: 1;
+  }
+ 
+  50% {
+   transform: translateY(66%) scale(0.65);
+   opacity: 0.8;
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 30px);
+}
